@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1a73e8;
+  --on-primary: #ffffff;
+  --surface: #ffffff;
+  --on-surface: #1f1f1f;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.material-shadow {
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14),
+    0 1px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.elevation-1 {
+  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12);
+}
+
+.elevation-2 {
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.bg-color-button-principal {
+  background-color: #b388d0;
+}
+.bg-color-button-principal-intenso {
+  background-color: #814ba6;
+}
+.bg-color-button-principal-intenso2 {
+  background-color: #52286e;
+}
+.bg-color-button-secundario {
+  background-color: #e266a6;
+}
+.bg-color-button-tercero {
+  background-color: #9bb330;
+}
+.color-font-principal {
+  color: #814ba6;
+}
+.color-font-principal-intenso {
+  color: #582679;
+}
+.color-font-texto-negro {
+  color: #2a2a2a;
+}
+.bg-color-button-cuarto {
+  background-color: #9bb330;
+}

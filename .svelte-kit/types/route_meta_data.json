@@ -1,0 +1,7 @@
+{
+	"/": [],
+	"/catalog": [
+		"src/routes/catalog/+page.server.ts"
+	],
+	"/resources": []
+}
