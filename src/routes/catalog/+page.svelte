@@ -1,45 +1,35 @@
 <script lang="ts">
-  import { cart } from '$lib/stores/cart';
-  import CategoryList from '$lib/components/CategoryList.svelte';
   import ProductCard from '$lib/components/ProductCard.svelte';
+  import CategoryFilter from '$lib/components/CategoryFilter.svelte';
   import ShoppingCart from '$lib/components/ShoppingCart.svelte';
-  import PurchaseGuide from '$lib/components/PurchaseGuide.svelte';
   import InfoSection from '$lib/components/InfoSection.svelte';
-  import type { Product, Category } from '$lib/types/product';
+  import PurchaseGuide from '$lib/components/PurchaseGuide.svelte';
 
   export let data;
 
-  const whatsappNumber = '+1234567890'; // Replace with actual number
+  const whatsappNumber = '+1234567890';
   let selectedCategory = 'all';
   
-  $: products = data.products as Product[];
-  $: categories = data.categories as Category[];
   $: filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products.filter(p => p.category === selectedCategory);
+    ? data.products 
+    : data.products.filter((p: any) => p.category === selectedCategory);
+
+  $: categories = ['all', ...new Set(data.products.map((p: any) => p.category))];
 </script>
 
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-  <div class="w-full flex justify-center items-center flex-col mb-8">
-    <img class="max-w-64 mb-4" src="https://rstr.in/xhy241m7cri4uc/somospepes/MBaKGcPgOnW" alt="Pet Shop Logo" />
-    <h1 class="text-3xl font-bold text-center color-font-principal">Somos Pepés</h1>
+  <div class="w-full flex justify-center items-center flex-col mb-4 bg-color-button-principal py-6 rounded-xl">
+    <img class="max-w-64  justify-center" src="logo-white.png" alt="Pet Shop Logo" />
+    <h1 class="text-3xl font-bold text-center text-white pt-2">Catálogo de productos</h1>
   </div>
-
-  <PurchaseGuide />
+  
   <InfoSection />
+  <PurchaseGuide />
+  <CategoryFilter {categories} bind:selectedCategory />
 
-  <CategoryList 
-    {categories} 
-    bind:selectedCategory 
-  />
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-    {#each filteredProducts as product, index}
-      <ProductCard 
-        {product}
-        {index}
-        {whatsappNumber}
-      />
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+    {#each filteredProducts as product, i}
+      <ProductCard {product} index={i} {whatsappNumber} />
     {/each}
   </div>
 

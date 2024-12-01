@@ -49,7 +49,7 @@
           isVisible = entry.isIntersecting;
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.9 }
     );
 
     if (cardElement) {
@@ -132,7 +132,7 @@
 <div
   bind:this={cardElement}
   class="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 flex flex-col h-full relative group"
-  class:scale-102={isVisible}
+ 
   class:shadow-xl={isVisible}
   in:fly={{ y: 20, duration: 300, delay: index * 100 }}
 >
@@ -153,8 +153,8 @@
     <img 
       src={product.image} 
       alt={product.name}
-      class="w-full h-64 object-cover transition-transform duration-300"
-      class:scale-105={isVisible}
+      class="w-full object-cover transition-transform duration-300"
+      class:scale-102={isVisible}
     />
   </div>
 
@@ -199,9 +199,6 @@
                 class="text-sm color-font-principal hover:color-font-principal-intenso transition-colors flex items-center space-x-1"
                 on:click={() => showSizeGuide = true}
               >
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
                 <span>Guía de talles</span>
               </button>
             </div>

@@ -13,11 +13,6 @@
 			on:keydown={(e) => e.key === 'Enter' && (expanded = !expanded)}
 		>
 			<div class="flex items-start gap-3 flex-1">
-				<div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-primary/10 flex-shrink-0 flex items-center justify-center mt-0.5 sm:mt-0">
-					<svg class="w-4 h-4 sm:w-5 sm:h-5 color-font-principal" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-					</svg>
-				</div>
 				<div class="flex-1 min-w-0">
 					<h2 class="text-base sm:text-lg font-medium text-gray-800 leading-tight">¿Cómo comprar?</h2>
 					<p class="text-xs sm:text-sm text-gray-500 mt-0.5 line-clamp-2">Guía rápida para realizar tu compra</p>
@@ -45,9 +40,9 @@
 			class="overflow-hidden transition-all duration-300 ease-in-out"
 			style="max-height: {expanded ? '1000px' : '0px'}"
 		>
-			<div class="pt-4 sm:pt-5 space-y-4 sm:space-y-6">
-				<div class="grid grid-cols-1 gap-3 pl-10 sm:pl-11">
-					<div class="relative bg-primary/5 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:bg-primary/10">
+			<div class="pt-4 space-y-4 sm:space-y-6">
+				<div class="grid grid-cols-1 gap-3">
+					<div class="relative bg-primary/5 rounded-lg  transition-all duration-300 hover:bg-primary/10">
 						<div class="flex items-center gap-2 sm:gap-3">
 							<div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
 								<span class="text-lg color-font-principal font-bold">1</span>
@@ -59,7 +54,7 @@
 						</div>
 					</div>
 					
-					<div class="relative bg-primary/5 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:bg-primary/10">
+					<div class="relative bg-primary/5 rounded-lg pt-2 transition-all duration-300 hover:bg-primary/10">
 						<div class="flex items-center gap-2 sm:gap-3">
 							<div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
 								<span class="text-lg color-font-principal font-bold">2</span>
@@ -71,7 +66,7 @@
 						</div>
 					</div>
 					
-					<div class="relative bg-primary/5 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:bg-primary/10">
+					<div class="relative bg-primary/5 rounded-lg pt-2 transition-all duration-300 hover:bg-primary/10">
 						<div class="flex items-center gap-2 sm:gap-3">
 							<div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
 								<span class="text-lg color-font-principal font-bold">3</span>
@@ -83,7 +78,7 @@
 						</div>
 					</div>
 
-					<div class="relative bg-primary/5 rounded-lg p-3 sm:p-4 transition-all duration-300 hover:bg-primary/10">
+					<div class="relative bg-primary/5 rounded-lg py-2 transition-all duration-300 hover:bg-primary/10">
 						<div class="flex items-center gap-2 sm:gap-3">
 							<div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
 								<span class="text-lg color-font-principal font-bold">4</span>

@@ -8,7 +8,7 @@
   let hasScrolled = false;
   
   function handleScroll() {
-    hasScrolled = window.scrollY > 50;
+    hasScrolled = window.scrollY > 360;
   }
 </script>
 
@@ -18,7 +18,7 @@
   <div 
     class="transition-all duration-300"
     class:translate-y-0={isExpanded}
-    class:shadow-lg={hasScrolled && isExpanded}
+    class:shadow-md={hasScrolled && isExpanded}
     class:-translate-y-full={!isExpanded}
   >
     <div 
@@ -51,18 +51,15 @@
   </div>
 
 <!-- <div id="botonColaps"
-  class="absolute left-1/2 -translate-x-1/2 translate-y-full"
-  class:bottom-8={!isExpanded}
-  class:bottom-6={isExpanded}
+  class="absolute left-1/2 -translate-x-1/2 translate-y-full {isExpanded ? 'bottom-6' : 'bottom-8'}"
   transition:fade={{ duration: 200 }}
 >
   <button
-    class="bg-white shadow-lg rounded-b-lg px-4 py-2 flex items-center space-x-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200 group"
+    class="bg-white shadow-lg rounded-b-lg px-4 py-2 flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
     on:click={() => isExpanded = !isExpanded}
   >
     <svg 
-      class="w-4 h-4 transition-transform duration-200 transform"
-      class:rotate-180={isExpanded}
+      class="w-4 h-4 transition-transform duration-200 {isExpanded ? 'rotate-180' : ''}"
       fill="none" 
       stroke="currentColor" 
       viewBox="0 0 24 24"
@@ -76,6 +73,31 @@
     </svg>
   </button>
 </div> -->
+
+<div id="botonColapsIzquierdo"
+  class="fixed left-0 bottom-6 transform translate-y-0 pl-3"
+  transition:fade={{ duration: 200 }}
+>
+  <button
+    class="bg-white shadow-lg rounded-lg px-4 py-2 flex items-center text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-200"
+    on:click={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+  >
+    <svg 
+      class="w-4 h-4 transition-transform duration-200"
+      fill="none" 
+      stroke="currentColor" 
+      viewBox="0 0 24 24"
+    >
+      <path 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        stroke-width="2" 
+        d="M5 15l7-7 7 7"
+      />
+    </svg>
+  </button>
+</div>
+
 
 
 </div>

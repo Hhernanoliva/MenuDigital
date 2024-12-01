@@ -7,12 +7,10 @@ export interface ProcessedVariant {
 export interface Product {
   id: string;
   name: string;
-  price: number;
   description: string;
-  category: string;
-  stock: boolean;
   image: string;
-  marca?: string;
+  category: string;
+  marca: string;
   variants: {
     sizes?: ProcessedVariant[];
     colors?: ProcessedVariant[];
@@ -20,12 +18,7 @@ export interface Product {
   };
   basePrice: number;
   baseOfertaPrecio: number | null;
-  ofertaPorcentaje: number | null;
-}
-
-export interface Category {
-  name: string;
-  image: string;
+  ofertaPorcentaje?: number;
 }
 
 export interface CartItem {

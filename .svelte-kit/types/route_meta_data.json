@@ -3,5 +3,6 @@
 	"/catalog": [
 		"src/routes/catalog/+page.server.ts"
 	],
+	"/lizi": [],
 	"/resources": []
 }

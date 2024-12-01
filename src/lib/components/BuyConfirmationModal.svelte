@@ -42,12 +42,12 @@
       class="bg-white rounded-xl shadow-xl p-6 max-w-md w-full mx-4 transform"
       transition:scale={{ duration: 200 }}
     >
-      <h2 class="text-xl font-bold mb-4">Choose Purchase Option</h2>
+      <h2 class="text-xl font-bold mb-4">Elige Opción de Compra</h2>
       
       <div class="space-y-4">
         <div class="bg-gray-50 rounded-lg p-4">
           <div class="flex justify-between items-center mb-2">
-            <span class="text-gray-600">Current Item Total:</span>
+            <span class="text-gray-600">Total del Artículo Actual:</span>
             <span class="font-medium">${currentItemTotal.toFixed(2)}</span>
           </div>
           <a
@@ -56,7 +56,7 @@
             rel="noopener noreferrer"
             class="block w-full bg-purple-400 text-white text-center px-6 py-3 rounded-xl font-medium hover:bg-purple-500 transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            Buy Only This Item
+            Comprar Solo Este Artículo
           </a>
         </div>
         
@@ -73,15 +73,15 @@
           <div class="bg-gray-50 rounded-lg p-4">
             <div class="space-y-2 mb-3">
               <div class="flex justify-between items-center text-sm">
-                <span class="text-gray-600">Cart Items Total:</span>
+                <span class="text-gray-600">Total de Artículos en el Carrito:</span>
                 <span class="font-medium">${cartTotal.toFixed(2)}</span>
               </div>
               <div class="flex justify-between items-center text-sm">
-                <span class="text-gray-600">Current Item:</span>
+                <span class="text-gray-600">Artículo Actual:</span>
                 <span class="font-medium">${currentItemTotal.toFixed(2)}</span>
               </div>
               <div class="flex justify-between items-center text-lg pt-2 border-t border-gray-200">
-                <span class="font-medium text-gray-700">Combined Total:</span>
+                <span class="font-medium text-gray-700">Total Combinado:</span>
                 <span class="font-bold text-blue-600">${combinedTotal.toFixed(2)}</span>
               </div>
             </div>
@@ -92,7 +92,7 @@
               rel="noopener noreferrer"
               class="block w-full bg-color-button-cuarto hover:bg-lime-400 active:bg-lime-500 text-white text-center px-6 py-3 rounded-xl font-medium transition-colors shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200"
             >
-              Buy All Items ({cartItems.length + 1})
+              Comprar Todos los Artículos ({cartItems.length + 1})
             </a>
           </div>
         {/if}
@@ -101,7 +101,7 @@
           class="block w-full border border-gray-300 text-gray-700 text-center px-6 py-3 rounded-xl font-medium hover:bg-gray-50 transition-colors mt-2"
           on:click={onClose}
         >
-          Cancel
+          Cancelar
         </button>
       </div>
     </div>

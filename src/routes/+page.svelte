@@ -27,9 +27,9 @@
         <p class="mt-1">Correas, pretales y accesorios</p>
       </div>
     </a>
-
+    
     <a 
-      href="/resources"
+      href="https://drive.google.com/file/d/1rjTfYlR5BnyCkkqHDiIPmw02ZxO4sYaD/view"
       class="transform hover:scale-105 transition-transform duration-300"
       in:scale={{ duration: 300, delay: 300 }}
     >

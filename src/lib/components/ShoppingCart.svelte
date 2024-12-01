@@ -43,9 +43,9 @@
       transition:slide={{ duration: 300, easing: cubicOut }}
     >
       <div class="flex justify-between items-center mb-6">
-        <h2 class="text-xl font-bold">Your Cart</h2>
+        <h2 class="text-xl font-bold">Tu Carrito</h2>
         <div class="flex items-center space-x-2">
-          <span class="text-sm text-gray-500">{itemCount} items</span>
+          <span class="text-sm text-gray-500">{itemCount} artículos</span>
           <button
             class="text-gray-400 hover:text-gray-600 transition-colors"
             on:click={() => isExpanded = false}
@@ -109,7 +109,7 @@
             rel="noopener noreferrer"
             class="block w-full bg-green-500 text-white text-center px-6 py-3 rounded-xl font-medium hover:bg-green-600 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200"
           >
-            Complete Order on WhatsApp
+            Completar Pedido en WhatsApp
           </a>
         </div>
       {:else}
@@ -117,8 +117,8 @@
           <svg class="w-16 h-16 mx-auto text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
           </svg>
-          <p class="text-gray-500 text-lg">Your cart is empty</p>
-          <p class="text-gray-400 text-sm mt-2">Add some products to get started</p>
+          <p class="text-gray-500 text-lg">Tu carrito está vacío</p>
+          <p class="text-gray-400 text-sm mt-2">Agrega algunos productos para comenzar</p>
         </div>
       {/if}
     </div>

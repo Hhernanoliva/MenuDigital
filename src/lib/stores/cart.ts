@@ -1,5 +1,12 @@
 import { writable } from 'svelte/store';
-import type { CartItem } from '$lib/types/product';
+
+export type CartItem = {
+  productId: string;
+  name: string;
+  price: number;
+  quantity: number;
+  selectedVariants: Record<string, string>;
+};
 
 function createCart() {
   const { subscribe, set, update } = writable<CartItem[]>([]);
@@ -7,7 +14,10 @@ function createCart() {
   return {
     subscribe,
     addItem: (item: CartItem) => update(items => {
-      const existingItemIndex = items.findIndex(i => i.productId === item.productId);
+      const existingItemIndex = items.findIndex(i => 
+        i.productId === item.productId && 
+        JSON.stringify(i.selectedVariants) === JSON.stringify(item.selectedVariants)
+      );
 
       if (existingItemIndex !== -1) {
         items[existingItemIndex].quantity += item.quantity;
@@ -15,11 +25,17 @@ function createCart() {
       }
       return [...items, item];
     }),
-    removeItem: (productId: string) => 
-      update(items => items.filter(i => i.productId !== productId)),
-    updateQuantity: (productId: string, quantity: number) =>
+    removeItem: (productId: string, selectedVariants: Record<string, string>) => 
+      update(items => items.filter(i => 
+        !(i.productId === productId && 
+          JSON.stringify(i.selectedVariants) === JSON.stringify(selectedVariants))
+      )),
+    updateQuantity: (productId: string, selectedVariants: Record<string, string>, quantity: number) =>
       update(items => items.map(i => 
-        i.productId === productId ? { ...i, quantity } : i
+        i.productId === productId && 
+        JSON.stringify(i.selectedVariants) === JSON.stringify(selectedVariants)
+          ? { ...i, quantity }
+          : i
       )),
     clear: () => set([])
   };
